@@ -1,0 +1,6 @@
+name: Jenkins 2
+description: |
+  Build great things at any scale
+  The leading open source automation server, Jenkins provides hundreds of plugins to support building, deploying and automating any project.
+version: 2-0
+category: CI-CD

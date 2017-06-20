@@ -1,0 +1,27 @@
+.catalog:
+  name: Jenkins 2
+  version: 2-0
+  description: |
+    Build great things at any scale
+    The leading open source automation server, Jenkins provides hundreds of plugins to support building, deploying and automating any project.
+  minimum_rancher_version: v1.0
+  maintainer: "Alexis Ducastel <alexis@infrabuilder.com>"
+  uuid: jenkins2-0
+
+version: '2'
+services:
+  jenkins-data:
+    scale: 1
+    start_on_create: true
+  jenkins:
+    scale: 1
+    start_on_create: true
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 8080
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: recreate
+      reinitializing_timeout: 60000
